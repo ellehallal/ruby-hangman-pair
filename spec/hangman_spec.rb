@@ -12,6 +12,12 @@ describe 'hangman' do
     expect(game.hangman).to eq 6
   end
 
+describe 'hangman' do
+  wrong = WrongGuess.new
+  it 'it will return an empty array' do
+    expect(wrong.wrong_guess).to eq []
+  end
+end
 
 
 

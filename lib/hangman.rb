@@ -10,6 +10,7 @@ class Hangman
   end
 end
 
+
 class Words
   @@word_array = ["apple", "pear", "Avacado", "blackbery", "jackfruit", "kinder", "lychee", "guacamole"]
 
@@ -21,6 +22,7 @@ class Words
     @word
   end
 end
+
 
 class Lives
   def initialize
@@ -35,5 +37,15 @@ class Lives
     @lives -= 1
     self.lives
   end
-
 end
+
+  class WrongGuess
+
+    def initialize
+    end
+
+    def wrong_guess
+    []
+    end
+
+  end
