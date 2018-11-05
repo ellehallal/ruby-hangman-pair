@@ -1,3 +1,5 @@
-def hangman
-  "hi"
+class Hangman
+  def hangman
+    "hi"
+  end
 end
