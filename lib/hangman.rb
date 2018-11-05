@@ -1,6 +1,6 @@
 class Hangman
   def hangman
-    word = "parallelogram"
-    word
+    word = []
+    word.is_a? Array
   end
 end

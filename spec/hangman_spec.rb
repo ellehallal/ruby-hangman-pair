@@ -2,8 +2,8 @@ require 'hangman'
 
 describe 'hangman' do
   game = Hangman.new
-  it 'returns parallelogram' do
-    expect(game.hangman).to eq "parallelogram"
+  it 'returns true when checking if word is an array' do
+    expect(game.hangman).to eq true
   end
 end
 
