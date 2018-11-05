@@ -42,10 +42,11 @@ end
   class WrongGuess
 
     def initialize
+      @incorrect = []
     end
 
     def wrong_guess
-    []
+      @incorrect
     end
 
   end
