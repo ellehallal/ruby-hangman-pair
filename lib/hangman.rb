@@ -4,8 +4,8 @@ class Hangman
     solution = Words.new.word
     solution.is_a? String
 
-    life = Lives.new.lives
-    life
+    life = Lives.new
+    life.subtract_lives
 
   end
 end
@@ -29,6 +29,11 @@ class Lives
 
   def lives
     @lives
+  end
+
+  def subtract_lives
+    @lives -= 1
+    self.lives
   end
 
 end
