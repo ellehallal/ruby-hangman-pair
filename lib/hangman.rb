@@ -1,5 +1,6 @@
 class Hangman
   def hangman
-    "hi"
+    word = "parallelogram"
+    word
   end
 end
