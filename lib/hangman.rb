@@ -1,5 +1,8 @@
 class Hangman
+
   def hangman
+    solution = Words.new.word
+    solution.is_a? String
 
   end
 end
@@ -12,7 +15,7 @@ class Words
   end
 
   def word
-    @word.is_a? String
+    @word
   end
 
 end

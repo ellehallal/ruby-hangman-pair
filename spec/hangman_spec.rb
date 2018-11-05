@@ -1,9 +1,9 @@
 require 'hangman'
 
 describe 'hangman' do
-  words = Words.new
-  it 'returns a string from the @@word_array' do
-    expect(words.word).to eq true
+  game = Hangman.new
+  it 'returns a string @@word_array in Words class' do
+    expect(game.hangman).to eq true
   end
 end
 
