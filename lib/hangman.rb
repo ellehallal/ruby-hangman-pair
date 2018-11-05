@@ -4,6 +4,9 @@ class Hangman
     solution = Words.new.word
     solution.is_a? String
 
+    lives = 7
+    lives
+
   end
 end
 
