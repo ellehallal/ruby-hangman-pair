@@ -4,8 +4,8 @@ class Hangman
     solution = Words.new.word
     solution.is_a? String
 
-    lives = 7
-    lives
+    life = Lives.new.lives
+    life
 
   end
 end
@@ -19,6 +19,16 @@ class Words
 
   def word
     @word
+  end
+end
+
+class Lives
+  def initialize
+    @lives = 7
+  end
+
+  def lives
+    @lives
   end
 
 end
