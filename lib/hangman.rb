@@ -1,6 +1,6 @@
 class Hangman
   def hangman
-    word = []
-    word.is_a? Array
+    word = ["apple", "pear", "Avacado", "blackbery", "jackfruit", "kinder", "lychee", "guacamole"]
+    word[0]
   end
 end

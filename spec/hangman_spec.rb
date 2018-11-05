@@ -2,8 +2,8 @@ require 'hangman'
 
 describe 'hangman' do
   game = Hangman.new
-  it 'returns true when checking if word is an array' do
-    expect(game.hangman).to eq true
+  it 'returns a string from the word array' do
+    expect(game.hangman).to eq "apple"
   end
 end
 
