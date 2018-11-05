@@ -1,0 +1,3 @@
+def hangman
+  "hi"
+end
