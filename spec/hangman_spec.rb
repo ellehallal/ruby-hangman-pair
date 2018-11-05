@@ -3,7 +3,7 @@ require 'hangman'
 describe 'hangman' do
   game = Hangman.new
   it 'returns a string from the word array' do
-    expect(game.hangman).to eq "apple"
+    expect(game.hangman).to eq true
   end
 end
 
