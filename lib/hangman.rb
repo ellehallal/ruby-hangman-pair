@@ -39,14 +39,14 @@ class Lives
   end
 end
 
-  class WrongGuess
+class WrongGuess
 
-    def initialize
-      @incorrect = []
-    end
-
-    def wrong_guess
-      @incorrect
-    end
-
+  def initialize
+    @incorrect = []
   end
+
+  def wrong_guess
+    @incorrect
+  end
+
+end

@@ -8,16 +8,24 @@ describe 'hangman' do
   # it 'returns 7 lives to user' do
   #   expect(game.hangman).to eq life
   # end
-  it 'subtracts 1 life when guess is incorrect' do
-    expect(game.hangman).to eq 6
+
+  word = Words.new
+  it 'returns a word from the @@word_array' do
+    expect(word.word).to eq is_a? String
   end
 
-describe 'hangman' do
+
+  life = Lives.new
+  it 'subtracts 1 life when guess is incorrect' do
+    expect(life.subtract_lives).to eq 6
+  end
+
+
   wrong = WrongGuess.new
   it 'it will return an empty array' do
     expect(wrong.wrong_guess).to eq []
   end
-end
+
 
 
 
