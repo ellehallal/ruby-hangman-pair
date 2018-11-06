@@ -12,6 +12,12 @@ RSpec.describe Word do
     expect(guessed_letters).to eq(['_'] * 10)
   end
 
+  it "adds a letter to to the current word" do
+    word = Word.new('hello')
+    word.add_guess('h')
+    expect(word.guessed_letters).to eq(['h', '_', '_', '_', '_'])
+  end
+
 
 
 end

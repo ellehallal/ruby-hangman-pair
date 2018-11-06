@@ -1,12 +1,23 @@
 class Word
   def initialize(word)
     @word = word
+    @user_guesses = []
   end
 
   def guessed_letters
-    @word.split("").map do |letter|
-      "_"
+    letters = []
+
+    @word.split("").each do |letter|
+      if @user_guesses.include?(letter)
+        letters.push(letter)
+      else
+        letters.push("_")
+      end
     end
-    # ['_'] * 5
+    letters
+  end
+
+  def add_guess(letter)
+    @user_guesses.push(letter)
   end
 end
