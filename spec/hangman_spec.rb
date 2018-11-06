@@ -43,6 +43,15 @@ RSpec.describe Word do
     expect(word.incorrect_guesses).to eq(['m'])
   end
 
+  it "compares correct guesses to the word and returns true if they're equal" do
+    word = Word.new('hello')
+    word.add_guess('h')
+    word.add_guess('e')
+    word.add_guess('l')
+    word.add_guess('o')
+    expect(word.guesses_equal_to_word).to eq(true)
+  end
+
 
 
 end
