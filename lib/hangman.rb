@@ -31,7 +31,6 @@ class Word
         end
       end
     else
-      @correct_guesses.push("_")
       @incorrect_guesses.push(letter)
     end
     @correct_guesses
