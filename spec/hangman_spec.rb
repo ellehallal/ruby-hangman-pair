@@ -25,6 +25,15 @@ RSpec.describe Word do
     expect(word.guessed_letters).to eq(['h', 'e', '_', '_', '_'])
   end
 
+  it "discards letter if not present in the word" do
+    word = Word.new('hello')
+    word.add_guess('h')
+    word.add_guess('e')
+    word.add_guess('l')
+    word.add_guess('m')
+    expect(word.guessed_letters).to eq(['h', 'e', 'l', 'l', '_'])
+  end
+
 
 
 end
