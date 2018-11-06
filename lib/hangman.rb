@@ -1,20 +1,27 @@
 class Word
+
+  attr_reader :incorrect, :letters
+
   def initialize(word)
     @word = word
     @user_guesses = []
+    @incorrect =[]
+    @letters = []
   end
 
   def guessed_letters
-    letters = []
+
 
     @word.split("").each do |letter|
       if @user_guesses.include?(letter)
-        letters.push(letter)
+        @letters.push(letter)
       else
-        letters.push("_")
+        @letters.push("_")
+        @incorrect << @user_guesses.pop
       end
     end
-    letters
+    @letters
+    # incorrect
   end
 
   def add_guess(letter)
