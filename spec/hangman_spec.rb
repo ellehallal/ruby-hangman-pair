@@ -11,7 +11,7 @@ describe 'hangman' do
 
   word = Words.new
   it 'returns a word from the @@word_array' do
-    expect(word.word).to eq is_a? String
+    expect(word.word).to eq is_a? String 
   end
 
 
