@@ -34,6 +34,14 @@ class Display
     "You are incorrect!"
   end
 
+  def incorrect_guess
+    "You are incorrect!"
+  end
+
+  def already_guessed
+    "Already guessed, please try again."
+  end
+
 
 
 end

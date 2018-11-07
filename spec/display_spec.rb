@@ -35,9 +35,14 @@ RSpec.describe Display do
     expect(display.correct_guess).to eq("You are correct!")
   end
 
-  it "displays message for a incorrect guess" do
+  it "displays message for an incorrect guess" do
     display = Display.new
     expect(display.incorrect_guess).to eq("You are incorrect!")
+  end
+
+  it "displays message for a letter that's already guessed, whether incorrect or correct" do
+    display = Display.new
+    expect(display.already_guessed).to eq("Already guessed, please try again.")
   end
 
 end
