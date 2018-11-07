@@ -11,6 +11,12 @@ RSpec.describe Lives do
     expect(lives.subtract_life).to eq(7)
   end
 
+  it "returns true if there are no lives remaining" do
+    lives = Lives.new
+    8.times { lives.subtract_life }
+    expect(lives.no_more_lives?).to eq(true)
+  end
+
 
 
 
