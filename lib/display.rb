@@ -17,4 +17,13 @@ class Display
   def winner
     "You are a winner!"
   end
+
+  def loser
+    %Q(
+      You have run out of lives. You're dead!
+      You're a loser.
+      The game is over.
+    )
+  end
+
 end

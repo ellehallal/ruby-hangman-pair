@@ -16,9 +16,18 @@ RSpec.describe Display do
     ))
   end
 
-  it "displays winner" do
+  it "displays winner message" do
     display = Display.new
     expect(display.winner).to eq("You are a winner!")
+  end
+
+  it "displays loser message" do
+    display = Display.new
+    expect(display.loser).to eq(%Q(
+      You have run out of lives. You're dead!
+      You're a loser.
+      The game is over.
+    ))
   end
 
 end
