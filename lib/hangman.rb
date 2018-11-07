@@ -35,16 +35,4 @@ class Word
     @correct_guesses.join(" ")
   end
 
-  # def guessed_letters
-  #   @word.split("").each do |letter|
-  #     if @user_guesses.include?(letter)
-  #       @correct_guesses.push(letter)
-  #     else
-  #       @correct_guesses.push("_")
-  #        @incorrect_guesses.push(@user_guesses.pop)
-  #     end
-  #   end
-  #   @correct_guesses
-  # end
-
 end
