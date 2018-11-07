@@ -11,4 +11,9 @@ RSpec.describe Game do
     expect(game.word.solved?).to eq(false)
   end
 
+  it "will instantiate an instance of Lives and return 8 when accessing @lives" do
+    game = Game.new
+    expect(game.lives.lives).to eq(8)
+  end
+
 end
