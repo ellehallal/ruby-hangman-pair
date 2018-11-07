@@ -61,6 +61,15 @@ RSpec.describe Word do
     expect(word.display_incorrect_guesses).to eq("k b m")
   end
 
+  it "displays user's correct guesses as a string" do
+    word = Word.new('hello')
+    word.add_guess('s')
+    word.add_guess('l') #correct guess
+    word.add_guess('o') #correct guess
+    word.add_guess('j')
+    expect(word.display_correct_guesses).to eq("_ _ l l o")
+  end
+
 
 
 end
