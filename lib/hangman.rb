@@ -4,22 +4,20 @@ class Word
 
   def initialize(word)
     @word = word
-    @user_guesses = [] # not needed?
+    # @user_guesses = [] # not needed?
     @incorrect_guesses = []
     @correct_guesses = ["_"] * @word.length
   end
 
   def add_guess(letter)
-    if @user_guesses.include?(letter)
-      already_guessed
+    if @incorrect_guesses.include?(letter) && @incorrect_guesses.include?(letter)
+      "Already guessed, please try again."
 
     elsif @word.include?(letter)
-      @user_guesses.push(letter)
-      add_correct_guess
-      
+      add_correct_guess(letter)
+
     else
-      @user_guesses.push(letter)
-      add_incorrect_guess
+      add_incorrect_guess(letter)
     end
   end
 
@@ -27,9 +25,7 @@ class Word
     "Already guessed, please try again."
   end
 
-  def add_correct_guess
-    letter = @user_guesses.pop
-
+  def add_correct_guess(letter)
     @word.split("").each_with_index do |character, position|
       if letter == character
         @correct_guesses[position] = letter
@@ -38,8 +34,7 @@ class Word
     "#{letter} is correct"
   end
 
-  def add_incorrect_guess
-    letter = @user_guesses.pop
+  def add_incorrect_guess(letter)
     @incorrect_guesses.push(letter)
     "#{letter} is not correct."
   end
