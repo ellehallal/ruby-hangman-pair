@@ -10,13 +10,21 @@ class Word
   end
 
   def add_guess(letter)
-    @user_guesses.push(letter) #not needed?
+    if @user_guesses.include?(letter)
+      already_guessed
 
-    if @word.include?(letter)
+    elsif @word.include?(letter)
+      @user_guesses.push(letter)
       add_correct_guess
+      
     else
+      @user_guesses.push(letter)
       add_incorrect_guess
     end
+  end
+
+  def already_guessed
+    "Already guessed, please try again."
   end
 
   def add_correct_guess
@@ -27,15 +35,13 @@ class Word
         @correct_guesses[position] = letter
       end
     end
-
+    "#{letter} is correct"
   end
 
   def add_incorrect_guess
-    @incorrect_guesses.push(@user_guesses.pop)
-  end
-
-  def solved?
-    @word == correct_guesses.join("")
+    letter = @user_guesses.pop
+    @incorrect_guesses.push(letter)
+    "#{letter} is not correct."
   end
 
   def display_incorrect_guesses
@@ -44,6 +50,10 @@ class Word
 
   def display_correct_guesses
     @correct_guesses.join(" ")
+  end
+
+  def solved?
+    @word == correct_guesses.join("")
   end
 
 end

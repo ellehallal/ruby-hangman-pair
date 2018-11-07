@@ -70,5 +70,13 @@ RSpec.describe Word do
     expect(word.display_correct_guesses).to eq("_ _ l l o")
   end
 
+  it "displays 'already guessed, please try again' if user inputs letter previously guessed" do
+    word = Word.new('hello')
+    word.add_guess('s')
+    word.add_guess('l')
+    word.add_guess('s')
+    expect(word.already_guessed).to eq("Already guessed, please try again.")
+  end
+
 
 end
