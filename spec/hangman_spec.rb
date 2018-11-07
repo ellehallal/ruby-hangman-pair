@@ -49,7 +49,7 @@ RSpec.describe Word do
     word.add_guess('h')
     word.add_guess('o')
     word.add_guess('l')
-    expect(word.guesses_equal_to_word).to eq(true)
+    expect(word.solved?).to eq(true)
   end
 
   it "displays user's incorrect guesses as a string" do

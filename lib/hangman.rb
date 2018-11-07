@@ -23,7 +23,7 @@ class Word
     end
   end
 
-  def guesses_equal_to_word
+  def solved?
     @word == correct_guesses.join("")
   end
 
