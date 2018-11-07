@@ -13,14 +13,25 @@ class Word
     @user_guesses.push(letter) #not needed?
 
     if @word.include?(letter)
-      @word.split("").each_with_index do |character, position|
-        if letter == character
-          @correct_guesses[position] = letter
-        end
-      end
+      add_correct_guess
     else
-      @incorrect_guesses.push(letter)
+      add_incorrect_guess
     end
+  end
+
+  def add_correct_guess
+    letter = @user_guesses.pop
+
+    @word.split("").each_with_index do |character, position|
+      if letter == character
+        @correct_guesses[position] = letter
+      end
+    end
+
+  end
+
+  def add_incorrect_guess
+    @incorrect_guesses.push(@user_guesses.pop)
   end
 
   def solved?
