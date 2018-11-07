@@ -30,4 +30,14 @@ RSpec.describe Display do
     ))
   end
 
+  it "displays message for a correct guess" do
+    display = Display.new
+    expect(display.correct_guess).to eq("You are correct!")
+  end
+
+  it "displays message for a incorrect guess" do
+    display = Display.new
+    expect(display.incorrect_guess).to eq("You are incorrect!")
+  end
+
 end

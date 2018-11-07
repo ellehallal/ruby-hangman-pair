@@ -26,4 +26,14 @@ class Display
     )
   end
 
+  def correct_guess
+    "You are correct!"
+  end
+
+  def incorrect_guess
+    "You are incorrect!"
+  end
+
+
+
 end
