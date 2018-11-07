@@ -75,4 +75,5 @@ RSpec.describe Word do
     word.add_guess('l')
     expect(word.add_guess('s')).to eq("Already guessed, please try again.")
   end
+
 end
