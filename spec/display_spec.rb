@@ -16,4 +16,9 @@ RSpec.describe Display do
     ))
   end
 
+  it "displays winner" do
+    display = Display.new
+    expect(display.winner).to eq("You are a winner!")
+  end
+
 end

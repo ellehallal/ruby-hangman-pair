@@ -13,4 +13,8 @@ class Display
       Guess a letter:
     )
   end
+
+  def winner
+    "You are a winner!"
+  end
 end
