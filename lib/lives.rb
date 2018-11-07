@@ -1,8 +1,8 @@
 class Lives
   attr_reader :lives
 
-  def initialize
-    @lives = 8
+  def initialize(lives=8)
+	  @lives = lives
   end
 
   def subtract_life
