@@ -1,14 +1,12 @@
-require 'hangman'
+require 'word'
 
 RSpec.describe Word do
   it "returns the guessed letters" do
     word = Word.new('hello')
-    # guessed_letters = word.guessed_letters
     expect(word.correct_guesses).to eq(["_"] * 5)
   end
   it "returns placeholders for different lengths of words" do
     word = Word.new('blackberry')
-    # guessed_letters = word.guessed_letters
     expect(word.correct_guesses).to eq(['_'] * 10)
   end
 
@@ -77,6 +75,4 @@ RSpec.describe Word do
     word.add_guess('l')
     expect(word.add_guess('s')).to eq("Already guessed, please try again.")
   end
-
-
 end
