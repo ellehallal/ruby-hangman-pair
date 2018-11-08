@@ -14,9 +14,8 @@ class Game
   def play
     puts @display.intro
     puts @display.game_rules
-    while @word.solved? == false || !@word.lives == 0
-      puts "solved: #{word.solved?}"
-      puts "Your lives: #{word.lives}"
+    until @word.solved? || @word.lives == 1
+      puts "Your lives:#{word.lives}"
       puts "Guess a letter"
       print "> "
       letter = gets.chomp
