@@ -24,9 +24,10 @@ class Game
     end
 
     if @word.solved?
-      "You guessed the word #{@word.show_answer} correctly. You are a winner!"
+      puts "#{@word.show_answer}"
+      puts @display.winner
     else
-      "GAME OVER! You have unfortunately run out of lives"
+      puts @display.loser
     end
   end
 

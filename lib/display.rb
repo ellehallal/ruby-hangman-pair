@@ -15,7 +15,7 @@ class Display
   end
 
   def winner
-    "You are a winner!"
+    "You guessed the word correctly. You are a winner!"
   end
 
   def loser
@@ -25,23 +25,5 @@ class Display
       The game is over.
     )
   end
-
-  def correct_guess
-    "You are correct!"
-  end
-
-  def incorrect_guess
-    "You are incorrect!"
-  end
-
-  def incorrect_guess
-    "You are incorrect!"
-  end
-
-  def already_guessed
-    "Already guessed, please try again."
-  end
-
-
 
 end
