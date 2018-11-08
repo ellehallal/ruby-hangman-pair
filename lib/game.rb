@@ -11,16 +11,12 @@ class Game
 
   end
 
-  # def welcome
-  #   @display.intro
-  #   @display.game_rules
-  # end
-
-
   def play
     puts @display.intro
     puts @display.game_rules
     while @word.solved? == false || !@word.lives == 0
+      puts "solved: #{word.solved?}"
+      puts "lives: #{word.lives}"
       puts "Guess a letter"
       print "> "
       letter = gets.chomp
