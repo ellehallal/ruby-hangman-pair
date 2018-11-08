@@ -1,9 +1,16 @@
 class Word
 
+# require_relative "words.txt"
+#
+#   dictionary = File.open('words.txt')
+#   dictionary_array = dictionary.readlines
+#   dictionary_array.shuffle!
+
+@@WORD_ARRAY = ["avocado", "chocolate", "dolphin", "plant", "window", "glasses", "onomatopoeia", "babylon", "laptop", "ruby", "blackberry", "street", "zebra", "crossing", "music", "shoes", "south", "bank", "zyzzyva", "quizzing", "bamboozle", "jambeaux", "flapjack", "blizzard", "frazzled", "quincunx", "quadplex", "jezebel", "maximise", "quillaja"]
 
   attr_reader :incorrect_guesses, :correct_guesses, :lives
 
-  def initialize(word, lives=8)
+  def initialize(word=@@WORD_ARRAY.sample, lives=8)
     @word = word
     @incorrect_guesses = []
     @correct_guesses = ["_"] * @word.length
@@ -22,7 +29,7 @@ class Word
     else
       add_incorrect_guess(letter)
       @lives -= 1
-      puts "You have #{@lives} guesses left.\n Here are your incorrect guesses: \n#{display_incorrect_guesses}\n Here are your correct guesses: \n#{display_correct_guesses}"
+      puts "You have #{@lives} guesses left.\nHere are your incorrect guesses: #{display_incorrect_guesses}\nHere are your correct guesses: #{display_correct_guesses}"
 
     end
   end
