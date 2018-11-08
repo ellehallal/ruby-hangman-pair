@@ -1,5 +1,5 @@
-require './display.rb'
-require './word.rb'
+require 'display'
+require 'word'
 
 class Game
 
@@ -43,4 +43,4 @@ class Game
 
 end
 
-Game.new.play
+# Game.new.play
