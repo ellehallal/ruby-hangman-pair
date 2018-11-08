@@ -12,16 +12,17 @@ class Word
 
   def add_guess(letter)
     if @incorrect_guesses.include?(letter) || @correct_guesses.include?(letter)
-      "Already guessed, please try again.\n Incorrect guesses: \n#{display_incorrect_guesses}\nCorrect guesses:\n#{display_correct_guesses}"
+      puts "Already guessed, please try again.\nIncorrect guesses: #{display_incorrect_guesses}\nCorrect guesses: #{display_correct_guesses}"
 
     elsif @word.include?(letter)
       add_correct_guess(letter)
-      "That's correct! Here are your correct guesses: \n#{display_correct_guesses}"
-
+      if !solved?
+        puts "That's correct! Here are your correct guesses: \n#{display_correct_guesses}"
+      end
     else
       add_incorrect_guess(letter)
       @lives -= 1
-      "You have #{@lives} guesses left.\n Here are your incorrect guesses: \n#{display_incorrect_guesses}\n Here are your correct guesses: \n#{display_correct_guesses}"
+      puts "You have #{@lives} guesses left.\n Here are your incorrect guesses: \n#{display_incorrect_guesses}\n Here are your correct guesses: \n#{display_correct_guesses}"
 
     end
   end
@@ -39,7 +40,7 @@ class Word
   end
 
   def solved?
-    @word == correct_guesses.join(" ")
+    @word == correct_guesses.join("")
   end
 
   private
