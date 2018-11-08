@@ -34,8 +34,12 @@ class Word
     @correct_guesses.join(" ")
   end
 
+  def show_answer
+    @correct_guesses.join("")
+  end
+
   def solved?
-    @word == correct_guesses.join("")
+    @word == correct_guesses.join(" ")
   end
 
   private

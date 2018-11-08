@@ -13,7 +13,7 @@ RSpec.describe Game do
 
   it "will instantiate an instance of Lives and return 8 when accessing @lives" do
     game = Game.new
-    expect(game.lives.lives).to eq(8)
+    expect(game.word.lives).to eq(8)
   end
 
   it "will display the welcome message to players" do
@@ -42,10 +42,14 @@ RSpec.describe Game do
     expect(game.word.add_guess('k')).to eq("You have 7 guesses left.\n Here are your incorrect guesses: \nk\n Here are your correct guesses: \nh _ _ _ _")
   end
 
-  it "returns loser message when lives equals 0" do
+  it "will return winner message" do
     game = Game.new
-    8.times {@word.lives.subtract_life}
-    expect(game.word.lives.no_more_lives?).to eq true
+    game.word.add_guess('h')
+    game.word.add_guess('e')
+    game.word.add_guess('l')
+    game.word.add_guess('o')
+    expect(game.winner).to eq("You guessed the word hello correctly. You are a winner!")
   end
+
 
 end

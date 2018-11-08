@@ -1,15 +1,15 @@
 class Game
   require 'display'
   require 'word'
-  require 'lives'
+
 
 
   attr_reader :display, :word, :lives
 
-  def initialize(display=Display.new, word=Word.new('hello'), lives=Lives.new)
+  def initialize(display=Display.new, word=Word.new('hello'))
     @display = display
     @word = word
-    @lives = lives
+
   end
 
   def welcome
@@ -20,10 +20,24 @@ class Game
 
   def play
     welcome
-    while !@word.solved? || !@word.lives.no_more_lives?
+    while !@word.solved? || !@word.lives == 0
+      letter = gets.chomp
       @word.add_guess(letter)
+    end
+
+    if @word.solved?
+      winner
+    else
+      loser
     end
   end
 
+  def winner
+    "You guessed the word #{@word.show_answer} correctly. You are a winner!"
+  end
+
+  def loser
+    "GAME OVER! You have unfortunately run out of lives"
+  end
 
 end
