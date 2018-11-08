@@ -16,7 +16,7 @@ class Game
     puts @display.game_rules
     while @word.solved? == false || !@word.lives == 0
       puts "solved: #{word.solved?}"
-      puts "lives: #{word.lives}"
+      puts "Your lives: #{word.lives}"
       puts "Guess a letter"
       print "> "
       letter = gets.chomp
@@ -31,14 +31,4 @@ class Game
     end
   end
 
-  # def winner
-  #   "You guessed the word #{@word.show_answer} correctly. You are a winner!"
-  # end
-  #
-  # def loser
-  #   "GAME OVER! You have unfortunately run out of lives"
-  # end
-
 end
-
-# Game.new.play
