@@ -11,15 +11,16 @@ class Game
 
   end
 
-  def welcome
-    @display.intro
-    @display.game_rules
-  end
+  # def welcome
+  #   @display.intro
+  #   @display.game_rules
+  # end
 
 
   def play
-    welcome
-    while !@word.solved? || !@word.lives == 0
+    puts @display.intro
+    puts @display.game_rules
+    while @word.solved? == false || !@word.lives == 0
       puts "Guess a letter"
       print "> "
       letter = gets.chomp
@@ -27,19 +28,19 @@ class Game
     end
 
     if @word.solved?
-      winner
+      "You guessed the word #{@word.show_answer} correctly. You are a winner!"
     else
-      loser
+      "GAME OVER! You have unfortunately run out of lives"
     end
   end
 
-  def winner
-    "You guessed the word #{@word.show_answer} correctly. You are a winner!"
-  end
-
-  def loser
-    "GAME OVER! You have unfortunately run out of lives"
-  end
+  # def winner
+  #   "You guessed the word #{@word.show_answer} correctly. You are a winner!"
+  # end
+  #
+  # def loser
+  #   "GAME OVER! You have unfortunately run out of lives"
+  # end
 
 end
 
