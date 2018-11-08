@@ -12,7 +12,7 @@ class Word
 
   def add_guess(letter)
     if @incorrect_guesses.include?(letter) || @correct_guesses.include?(letter)
-      "Already guessed, please try again."
+      "Already guessed, please try again.\n Incorrect guesses: \n#{display_incorrect_guesses}\nCorrect guesses:\n#{display_correct_guesses}"
 
     elsif @word.include?(letter)
       add_correct_guess(letter)

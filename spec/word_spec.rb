@@ -73,7 +73,8 @@ RSpec.describe Word do
     word.add_guess('s')
     word.add_guess('m')
     word.add_guess('l')
-    expect(word.add_guess('s')).to eq("Already guessed, please try again.")
+    word.add_guess('o')
+    expect(word.add_guess('s')).to eq("Already guessed, please try again.\n Incorrect guesses: \ns m\nCorrect guesses:\n_ _ l l o")
   end
 
   it  "will return 8 lives" do
