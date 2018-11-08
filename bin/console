@@ -4,9 +4,9 @@
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
 
 
-require 'game'
+require 'start'
 
-new = Game.new
-new.play
+new = Start.new
+new.play_game
 
 # Require files here to experiment with them in an irb session
