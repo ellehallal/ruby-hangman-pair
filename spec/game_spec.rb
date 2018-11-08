@@ -18,7 +18,22 @@ RSpec.describe Game do
 
   it "will display the welcome message to players" do
     game = Game.new
-    expect(game.play).to eq("Welcome to Hangman")
+    expect(game.display.intro).to eq("Welcome to Hangman")
+  end
+
+  it "will display the rules to players" do
+    game = Game.new
+    expect(game.display.game_rules).to eq(%Q(
+      To win, you need to guess the mystery word or you die.
+      You can have up to 8 incorrect guesses, before you're hanged.
+      Let's begin!
+      Guess a letter:
+    ))
+  end
+
+  it "will return 'h' is correct when a letter is guessed" do
+    game = Game.new
+    expect(game.word.add_guess("h")).to eq("h is correct")
   end
 
 end

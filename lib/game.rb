@@ -14,6 +14,9 @@ class Game
 
   def play
     @display.intro
+    @display.game_rules
+    @word.add_guess(letter)
   end
+
 
 end
