@@ -11,4 +11,9 @@ class Game
     @word = word
     @lives = lives
   end
+
+  def play
+    @display.intro
+  end
+
 end

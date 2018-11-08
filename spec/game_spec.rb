@@ -16,4 +16,9 @@ RSpec.describe Game do
     expect(game.lives.lives).to eq(8)
   end
 
+  it "will display the welcome message to players" do
+    game = Game.new
+    expect(game.play).to eq("Welcome to Hangman")
+  end
+
 end
