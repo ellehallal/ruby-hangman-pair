@@ -76,4 +76,13 @@ RSpec.describe Word do
     expect(word.add_guess('s')).to eq("Already guessed, please try again.")
   end
 
+  it  "will return 8 lives" do
+    word = Word.new('hello')
+    expect(word.lives).to eq(8)
+  end
+
+  it  "will return 7 lives and k as the incorrect guess" do
+    word = Word.new('hello')
+    expect(word.add_guess('k')).to eq("You have 7 guesses left.\n Here are your incorrect guesses: \nk")
+  end
 end

@@ -1,11 +1,13 @@
 class Word
+  require 'lives'
 
-  attr_reader :incorrect_guesses, :correct_guesses
+  attr_reader :incorrect_guesses, :correct_guesses, :lives
 
-  def initialize(word)
+  def initialize(word, lives=Lives.new)
     @word = word
     @incorrect_guesses = []
     @correct_guesses = ["_"] * @word.length
+    @lives = lives.lives
   end
 
   def add_guess(letter)
@@ -17,6 +19,9 @@ class Word
 
     else
       add_incorrect_guess(letter)
+      @lives -= 1
+      "You have #{@lives} guesses left.\n Here are your incorrect guesses: \n#{display_incorrect_guesses}"
+
     end
   end
 
