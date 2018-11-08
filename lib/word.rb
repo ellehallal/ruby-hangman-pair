@@ -1,13 +1,13 @@
 class Word
-  require 'lives'
+
 
   attr_reader :incorrect_guesses, :correct_guesses, :lives
 
-  def initialize(word, lives=Lives.new)
+  def initialize(word, lives=8)
     @word = word
     @incorrect_guesses = []
     @correct_guesses = ["_"] * @word.length
-    @lives = lives.lives
+    @lives = lives
   end
 
   def add_guess(letter)

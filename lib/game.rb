@@ -20,7 +20,7 @@ class Game
 
   def play
     welcome
-    while !@word.solved? || !@lives.no_more_lives?
+    while !@word.solved? || !@word.lives.no_more_lives?
       @word.add_guess(letter)
     end
   end
