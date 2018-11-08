@@ -12,10 +12,17 @@ class Game
     @lives = lives
   end
 
-  def play
+  def welcome
     @display.intro
     @display.game_rules
-    @word.add_guess(letter)
+  end
+
+
+  def play
+    welcome
+    while !@word.solved? || !@lives.no_more_lives?
+      @word.add_guess(letter)
+    end
   end
 
 
