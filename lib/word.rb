@@ -16,11 +16,12 @@ class Word
 
     elsif @word.include?(letter)
       add_correct_guess(letter)
+      "That's correct! Here are your correct guesses: \n#{display_correct_guesses}"
 
     else
       add_incorrect_guess(letter)
       @lives -= 1
-      "You have #{@lives} guesses left.\n Here are your incorrect guesses: \n#{display_incorrect_guesses}"
+      "You have #{@lives} guesses left.\n Here are your incorrect guesses: \n#{display_incorrect_guesses}\n Here are your correct guesses: \n#{display_correct_guesses}"
 
     end
   end
