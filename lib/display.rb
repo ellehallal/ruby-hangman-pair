@@ -10,7 +10,7 @@ class Display
       To win, you need to guess the mystery word or you die.
       You can have up to 8 incorrect guesses, before you're hanged.
       Let's begin!
-      Guess a letter:
+
     )
   end
 

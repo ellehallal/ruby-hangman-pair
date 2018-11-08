@@ -1,22 +1,28 @@
 class Word
 
-  attr_reader :incorrect_guesses, :correct_guesses
 
-  def initialize(word)
+  attr_reader :incorrect_guesses, :correct_guesses, :lives
+
+  def initialize(word, lives=8)
     @word = word
     @incorrect_guesses = []
     @correct_guesses = ["_"] * @word.length
+    @lives = lives
   end
 
   def add_guess(letter)
     if @incorrect_guesses.include?(letter) || @correct_guesses.include?(letter)
-      "Already guessed, please try again."
+      "Already guessed, please try again.\n Incorrect guesses: \n#{display_incorrect_guesses}\nCorrect guesses:\n#{display_correct_guesses}"
 
     elsif @word.include?(letter)
       add_correct_guess(letter)
+      "That's correct! Here are your correct guesses: \n#{display_correct_guesses}"
 
     else
       add_incorrect_guess(letter)
+      @lives -= 1
+      "You have #{@lives} guesses left.\n Here are your incorrect guesses: \n#{display_incorrect_guesses}\n Here are your correct guesses: \n#{display_correct_guesses}"
+
     end
   end
 
@@ -28,8 +34,12 @@ class Word
     @correct_guesses.join(" ")
   end
 
+  def show_answer
+    @correct_guesses.join("")
+  end
+
   def solved?
-    @word == correct_guesses.join("")
+    @word == correct_guesses.join(" ")
   end
 
   private
