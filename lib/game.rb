@@ -1,8 +1,7 @@
+require './display.rb'
+require './word.rb'
+
 class Game
-  require 'display'
-  require 'word'
-
-
 
   attr_reader :display, :word, :lives
 
@@ -21,6 +20,8 @@ class Game
   def play
     welcome
     while !@word.solved? || !@word.lives == 0
+      puts "Guess a letter"
+      print "> "
       letter = gets.chomp
       @word.add_guess(letter)
     end
@@ -41,3 +42,5 @@ class Game
   end
 
 end
+
+Game.new.play
