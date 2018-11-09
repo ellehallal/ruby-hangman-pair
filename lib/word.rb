@@ -48,7 +48,7 @@ class Word
   end
 
   def show_answer
-    %Q(
+    print %Q(
         #{@correct_guesses.join("")})
   end
 

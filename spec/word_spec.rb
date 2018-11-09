@@ -100,6 +100,16 @@ RSpec.describe Word do
     expect {word.add_guess('h')}.to output(%Q(
         That's correct!
         Here are your correct guesses: h _ _ _ _)).to_stdout
-    # expect(word.add_guess('h')).to eq("That's correct! Here are your correct guesses:\nh _ _ _ _")
   end
+
+  it "will return hello to show the answer" do
+    word = Word.new('hello')
+    word.add_guess('e')
+    word.add_guess('h')
+    word.add_guess('o')
+    word.add_guess('l')
+    expect {word.show_answer}.to output(%Q(
+        hello)).to_stdout
+  end
+
 end
