@@ -17,7 +17,7 @@ class Word
         Already guessed, please try again.
         Incorrect guesses: #{display_incorrect_guesses}
         Correct guesses: #{display_correct_guesses})
-    elsif letter.length != 1
+    elsif letter.length != 1 
       print %Q(
         Please enter a single letter.
         Incorrect guesses: #{display_incorrect_guesses}
