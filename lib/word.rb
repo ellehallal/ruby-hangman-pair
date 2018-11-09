@@ -48,7 +48,8 @@ class Word
   end
 
   def show_answer
-    @correct_guesses.join("")
+    %Q(
+        #{@correct_guesses.join("")})
   end
 
   def solved?
