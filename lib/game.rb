@@ -3,7 +3,7 @@ require 'word'
 
 class Game
 
-  attr_reader :display, :word, :lives
+  attr_reader :display, :word
 
   def initialize(display=Display.new, word=Word.new())
     @display = display
@@ -22,7 +22,7 @@ class Game
       end
 
       if @word.solved?
-        puts "#{@word.show_answer}"
+        puts @word.show_answer
         puts @display.winner
       else
         puts @display.loser

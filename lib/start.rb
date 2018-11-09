@@ -7,7 +7,8 @@ class Start
 
   def play_game
     while @play_again == "Y"
-      Game.new.play
+      new_game = Game.new
+      new_game.play
       puts "Play again?"
       print "> "
       @play_again = gets.chomp.upcase
