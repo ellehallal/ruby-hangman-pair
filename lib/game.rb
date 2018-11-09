@@ -13,7 +13,7 @@ class Game
 
   def play
       puts @display.intro
-      puts @display.game_rules
+      @display.game_rules
       puts @word.display_correct_guesses
       until @word.solved? || @word.lives == 0
         puts @display.guess_letter

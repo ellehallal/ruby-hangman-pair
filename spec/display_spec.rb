@@ -1,48 +1,48 @@
 require 'display'
 
 RSpec.describe Display do
-  it "displays welcome message" do
+
+  it "prints welcome message" do
     display = Display.new
-    expect(display.intro).to eq("Welcome to Hangman")
+    expect {display.welcome}.to output("Welcome to Hangman").to_stdout
   end
 
-  it "displays rules to user" do
+  it "prints rules to user" do
     display = Display.new
-    expect(display.game_rules).to eq(%Q(
+    expect {display.game_rules}.to output(%Q(
       To win, you need to guess the mystery word or you die.
       You can have up to 8 incorrect guesses, before you're hanged.
-      Let's begin!
-    ))
+      Let's begin!\n    )).to_stdout
   end
 
-  it "displays winner message" do
+  it "prints winner message" do
     display = Display.new
-    expect(display.winner).to eq("You guessed the word correctly. You are a winner!")
+    expect {display.winner}.to output("You guessed the word correctly. You are a winner!").to_stdout
   end
 
-  it "displays loser message" do
+  it "prints loser message" do
     display = Display.new
-    expect(display.loser).to eq(%Q(
+    expect {display.loser}.to output(%Q(
       You have run out of lives. You're dead!
       You're a loser.
       The game is over.
-    ))
+    )).to_stdout
   end
 
-  it "displays guess a letter" do
+  it "prints guess a letter" do
     display = Display.new
-    expect(display.guess_letter).to eq(%Q(
+    expect {display.guess_letter}.to output(%Q(
       Guess a letter
       >
-    ))
+    )).to_stdout
   end
 
-  it "displays 'Play again? >'" do
+  it "prints 'Play again? >'" do
     display = Display.new
-    expect(display.play_again).to eq(%Q(
+    expect {display.play_again}.to output(%Q(
       Guess a letter
       >
-    ))
+    )).to_stdout
   end
 
 end
