@@ -13,7 +13,9 @@ class Display
   end
 
   def winner
-    print "You guessed the word correctly. You are a winner!"
+    print %Q(
+      You've guessed the word correctly. You are a winner!
+    )
   end
 
   def loser

@@ -13,7 +13,9 @@ RSpec.describe Display do
 
   it "prints winner message" do
     display = Display.new
-    expect {display.winner}.to output("You guessed the word correctly. You are a winner!").to_stdout
+    expect {display.winner}.to output(%Q(
+      You've guessed the word correctly. You are a winner!
+    )).to_stdout
   end
 
   it "prints loser message" do
