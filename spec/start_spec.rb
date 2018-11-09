@@ -13,7 +13,8 @@ RSpec.describe Start do
     start = Start.new
     expect {start.exit_message}.to output(%Q(
         Thanks for playing Hangman!
-        Created by Derek Baker and Elle Hallal)).to_stdout
+        Created by Derek Baker and Elle Hallal
+      )).to_stdout
   end
 
 

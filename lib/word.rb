@@ -27,8 +27,11 @@ class Word
     else
       add_incorrect_guess(letter)
       @lives -= 1
+      @plural_lives = ""
+      @lives == 1 ? @plural_lives = "guess" : @plural_lives = "guesses"
+
       print %Q(
-        You have #{@lives} guesses left.
+        You have #{@lives} #{@plural_lives} left.
         Here are your incorrect guesses: #{display_incorrect_guesses}
         Here are your correct guesses: #{display_correct_guesses})
     end
