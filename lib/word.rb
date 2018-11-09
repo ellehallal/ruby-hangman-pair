@@ -17,6 +17,11 @@ class Word
         Already guessed, please try again.
         Incorrect guesses: #{display_incorrect_guesses}
         Correct guesses: #{display_correct_guesses})
+    elsif letter.length != 1
+      print %Q(
+        Please enter a single letter.
+        Incorrect guesses: #{display_incorrect_guesses}
+        Correct guesses: #{display_correct_guesses})
     elsif @word.include?(letter)
       add_correct_guess(letter)
       if !solved?
