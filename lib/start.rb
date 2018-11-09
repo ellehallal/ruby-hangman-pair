@@ -12,7 +12,7 @@ class Start
       print "> "
       @play_again = gets.chomp.upcase
     end
-    puts "Thanks for playing"
+    puts "Thanks for playing Hangman! Created by Derek Baker and Elle Hallal"
   end
 
 end

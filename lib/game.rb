@@ -14,6 +14,7 @@ class Game
   def play
       puts @display.intro
       puts @display.game_rules
+      puts @word.display_correct_guesses
       until @word.solved? || @word.lives == 0
         @display.guess_letter
         letter = gets.chomp.downcase
