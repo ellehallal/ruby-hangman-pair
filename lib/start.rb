@@ -7,12 +7,25 @@ class Start
 
   def play_game
     while @play_again == "Y"
-      Game.new.play
-      puts "Play again?"
-      print "> "
+      new_game = Game.new
+      new_game.play
+      self.play_again
       @play_again = gets.chomp.upcase
     end
-    puts "Thanks for playing"
+    self.exit_message
+  end
+
+  def play_again
+    print %Q(
+        Play again?
+        >)
+  end
+
+  def exit_message
+    print %Q(
+        Thanks for playing Hangman!
+        Created by Derek Baker and Elle Hallal
+      )
   end
 
 end

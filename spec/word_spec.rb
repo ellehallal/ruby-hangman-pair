@@ -62,34 +62,54 @@ RSpec.describe Word do
   it "displays user's correct_guesses as a string" do
     word = Word.new('hello')
     word.add_guess('s')
-    word.add_guess('l') #correct guess
-    word.add_guess('o') #correct guess
+    word.add_guess('l')
+    word.add_guess('o')
     word.add_guess('j')
-    expect(word.display_correct_guesses).to eq("_ _ l l o")
+    expect {word.print_correct_guesses}.to output(%Q(
+        _ _ l l o)).to_stdout
   end
 
-  # it "displays 'already guessed, please try again' if user inputs letter previously guessed" do
-  #   word = Word.new('hello')
-  #   word.add_guess('s')
-  #   word.add_guess('m')
-  #   word.add_guess('l')
-  #   word.add_guess('o')
-  #   expect(word.add_guess('s')).to eq("Already guessed, please try again.\n Incorrect guesses: \ns m\nCorrect guesses:\n_ _ l l o")
-  # end
+  it "displays 'already guessed, please try again' if user inputs letter previously guessed" do
+    word = Word.new('hello')
+    word.add_guess('s')
+    word.add_guess('m')
+    word.add_guess('l')
+    word.add_guess('o')
+    expect {word.add_guess('s')}.to output(%Q(
+        Already guessed, please try again.
+        Incorrect guesses: s m
+        Correct guesses: _ _ l l o)).to_stdout
+  end
 
   it  "will return 8 lives" do
     word = Word.new('hello')
     expect(word.lives).to eq(8)
   end
 
-  # it  "will return 7 lives and k as the incorrect guess" do
-  #   word = Word.new('hello')
-  #   word.add_guess('h')
-  #   expect(word.add_guess('k')).to eq("You have 7 guesses left.\n Here are your incorrect guesses: \nk\n Here are your correct guesses: \nh _ _ _ _")
-  # end
+  it  "will return 7 lives and k as the incorrect guess" do
+    word = Word.new('hello')
+    word.add_guess('h')
+    expect {word.add_guess('k')}.to output(%Q(
+        You have 7 guesses left.
+        Here are your incorrect guesses: k
+        Here are your correct guesses: h _ _ _ _)).to_stdout
+  end
 
-  # it "will return h as a correct guess when user guesses correctly" do
-  #   word = Word.new('hello')
-  #   expect(word.add_guess('h')).to eq("That's correct! Here are your correct guesses: \nh _ _ _ _")
-  # end
+  it "will return h as a correct guess when user guesses correctly" do
+    word = Word.new('hello')
+    expect {word.add_guess('h')}.to output(%Q(
+        That's correct!
+        Here are your correct guesses: h _ _ _ _)).to_stdout
+  end
+
+  it "will return hello to show the answer" do
+    word = Word.new('hello')
+    word.add_guess('e')
+    word.add_guess('h')
+    word.add_guess('o')
+    word.add_guess('l')
+    expect {word.show_answer}.to output(%Q(
+        hello)).to_stdout
+  end
+
 end
