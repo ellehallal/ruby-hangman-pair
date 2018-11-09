@@ -29,4 +29,12 @@ RSpec.describe Display do
     ))
   end
 
+  it "displays guess a letter" do
+    display = Display.new
+    expect(display.guess_letter).to eq(%Q(
+      Guess a letter
+      >
+    ))
+  end
+
 end

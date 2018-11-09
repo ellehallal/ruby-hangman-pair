@@ -26,8 +26,10 @@ class Display
   end
 
   def guess_letter
-    puts "Guess a letter"
-    print "> "
+    %Q(
+      Guess a letter
+      >
+    ) 
   end
 
 end
