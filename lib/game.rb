@@ -12,11 +12,10 @@ class Game
   end
 
   def play
-      puts @display.intro
       @display.game_rules
       puts @word.display_correct_guesses
       until @word.solved? || @word.lives == 0
-        puts @display.guess_letter
+        @display.guess_letter
         letter = gets.chomp.downcase
         puts @word.add_guess(letter)
       end
@@ -25,7 +24,7 @@ class Game
         puts @word.show_answer
         puts @display.winner
       else
-        puts @display.loser
+        @display.loser
       end
   end
 

@@ -1,16 +1,11 @@
 class Display
-  # attr_reader :intro
 
-  def initialize(intro="Welcome to Hangman")
-    @intro = intro
-  end
-
-  def welcome
-    print @intro
+  def initialize()
   end
 
   def game_rules
     print %Q(
+      Welcome to Hangman!
       To win, you need to guess the mystery word or you die.
       You can have up to 8 incorrect guesses, before you're hanged.
       Let's begin!

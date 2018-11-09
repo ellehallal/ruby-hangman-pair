@@ -2,14 +2,10 @@ require 'display'
 
 RSpec.describe Display do
 
-  it "prints welcome message" do
-    display = Display.new
-    expect {display.welcome}.to output("Welcome to Hangman").to_stdout
-  end
-
   it "prints rules to user" do
     display = Display.new
     expect {display.game_rules}.to output(%Q(
+      Welcome to Hangman!
       To win, you need to guess the mystery word or you die.
       You can have up to 8 incorrect guesses, before you're hanged.
       Let's begin!\n    )).to_stdout
