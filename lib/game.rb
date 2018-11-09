@@ -18,7 +18,7 @@ class Game
       until @word.solved? || @word.lives == 0
         @display.guess_letter
         letter = gets.chomp.downcase
-        @word.add_guess(letter)
+        puts @word.add_guess(letter)
       end
 
       if @word.solved?
