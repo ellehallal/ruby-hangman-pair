@@ -42,6 +42,11 @@ class Word
     @correct_guesses.join(" ")
   end
 
+  def print_correct_guesses
+    print %Q(
+        #{@correct_guesses.join(" ")})
+  end
+
   def show_answer
     @correct_guesses.join("")
   end

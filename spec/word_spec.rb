@@ -62,10 +62,11 @@ RSpec.describe Word do
   it "displays user's correct_guesses as a string" do
     word = Word.new('hello')
     word.add_guess('s')
-    word.add_guess('l') #correct guess
-    word.add_guess('o') #correct guess
+    word.add_guess('l')
+    word.add_guess('o')
     word.add_guess('j')
-    expect(word.display_correct_guesses).to eq("_ _ l l o")
+    expect {word.print_correct_guesses}.to output(%Q(
+        _ _ l l o)).to_stdout
   end
 
   it "displays 'already guessed, please try again' if user inputs letter previously guessed" do
@@ -99,5 +100,6 @@ RSpec.describe Word do
     expect {word.add_guess('h')}.to output(%Q(
         That's correct!
         Here are your correct guesses: h _ _ _ _)).to_stdout
+    # expect(word.add_guess('h')).to eq("That's correct! Here are your correct guesses:\nh _ _ _ _")
   end
 end
