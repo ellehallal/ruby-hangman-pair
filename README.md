@@ -5,18 +5,18 @@
 
 ### Core features ###
 
-- User should be greeted by a message
-- User has a fixed number of guesses
-- Shows which letters have been guessed correctly
-- Shows if a user has won or lost
+- [x] User should be greeted by a message
+- [x] User has a fixed number of guesses
+- [x] Shows which letters have been guessed correctly
+- [x] Shows if a user has won or lost
 
 ### Stretch Goals ###
 
-- Show a list of the wrong letters
-- Computer picks a random word
-- User can choose to play again
+- [x] Show a list of the wrong letters
+- [x] Computer picks a random word
+- [x] User can choose to play again
 
 ### Steps ###
 
-- TDD in pairs
-- Don't start with the IO (i.e. `puts` `gets`) tests unless you're feeling ambitious!
+- [x] TDD in pairs
+- [x] Don't start with the IO (i.e. `puts` `gets`) tests unless you're feeling ambitious!
