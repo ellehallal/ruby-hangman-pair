@@ -23,11 +23,11 @@ RSpec.describe Game do
 
   it "will display the rules to players" do
     game = Game.new
-    expect {game.display.game_rules}.to output(%Q(
+    expect(game.display.game_rules).to output(%Q(
       To win, you need to guess the mystery word or you die.
       You can have up to 8 incorrect guesses, before you're hanged.
       Let's begin!
-    )).to_stdout
+    ))
   end
 
   it "will return 'h' is correct when a letter is guessed" do
