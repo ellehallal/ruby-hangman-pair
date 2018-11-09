@@ -29,7 +29,14 @@ class Display
     %Q(
       Guess a letter
       >
-    ) 
+    )
+  end
+
+  def play_again
+    %Q(
+      Guess a letter
+      >
+    )
   end
 
 end

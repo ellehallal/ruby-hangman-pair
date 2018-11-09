@@ -37,4 +37,12 @@ RSpec.describe Display do
     ))
   end
 
+  it "displays 'Play again? >'" do
+    display = Display.new
+    expect(display.play_again).to eq(%Q(
+      Guess a letter
+      >
+    ))
+  end
+
 end
