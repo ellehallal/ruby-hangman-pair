@@ -22,7 +22,7 @@ class Game
 
       if @word.solved?
         puts @word.show_answer
-        puts @display.winner
+        @display.winner
       else
         @display.loser
       end

@@ -13,18 +13,24 @@ class Word
 
   def add_guess(letter)
     if @incorrect_guesses.include?(letter) || @correct_guesses.include?(letter)
-      "Already guessed, please try again.\nIncorrect guesses: #{display_incorrect_guesses}\nCorrect guesses: #{display_correct_guesses}"
-
+      print %Q(
+        Already guessed, please try again.
+        Incorrect guesses: #{display_incorrect_guesses}
+        Correct guesses: #{display_correct_guesses})
     elsif @word.include?(letter)
       add_correct_guess(letter)
       if !solved?
-        "That's correct! Here are your correct guesses:\n#{display_correct_guesses}"
+        print %Q(
+        That's correct!
+        Here are your correct guesses: #{display_correct_guesses})
       end
     else
       add_incorrect_guess(letter)
       @lives -= 1
-      "You have #{@lives} guesses left.\nHere are your incorrect guesses: #{display_incorrect_guesses}\nHere are your correct guesses: #{display_correct_guesses}"
-
+      print %Q(
+        You have #{@lives} guesses left.
+        Here are your incorrect guesses: #{display_incorrect_guesses}
+        Here are your correct guesses: #{display_correct_guesses})
     end
   end
 
