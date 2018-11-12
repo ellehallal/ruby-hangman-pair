@@ -90,6 +90,13 @@ RSpec.describe Word do
     word = Word.new('hello')
     word.add_guess('h')
     expect {word.add_guess('k')}.to output(%Q(
+      +-----+
+            |
+            |
+            |
+            |
+            |
+      =======
         You have 7 guesses left.
         Here are your incorrect guesses: k
         Here are your correct guesses: h _ _ _ _)).to_stdout
