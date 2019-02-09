@@ -5,7 +5,7 @@ class Game
 
   attr_reader :display, :word
 
-  def initialize(display=Display.new, word=Word.new())
+  def initialize(display=Display.new, word=Word.new)
     @display = display
     @word = word
 
