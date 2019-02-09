@@ -1,11 +1,10 @@
 class Word
   require 'display'
-
-  @@WORD_ARRAY = ["avocado", "chocolate", "dolphin", "plant", "window", "glasses", "onomatopoeia", "babylon", "laptop", "ruby", "blackberry", "street", "zebra", "crossing", "music", "shoes", "south", "bank", "zyzzyva", "quizzing", "bamboozle", "jambeaux", "flapjack", "blizzard", "frazzled", "quincunx", "quadplex", "jezebel", "maximise", "quillaja"]
+  require 'random_word'
 
   attr_reader :incorrect_guesses, :correct_guesses, :lives, :display
 
-  def initialize(word=@@WORD_ARRAY.sample, lives=8, display=Display.new)
+  def initialize(word=RandomWord.new.pick_random_word, lives=8, display=Display.new)
     @word = word
     @incorrect_guesses = []
     @correct_guesses = ["_"] * @word.length
