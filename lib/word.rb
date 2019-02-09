@@ -18,7 +18,7 @@ class Word
         Already guessed, please try again.
         Incorrect guesses: #{display_incorrect_guesses}
         Correct guesses: #{display_correct_guesses})
-    elsif letter.length != 1 || letter.count("0-9") > 0
+    elsif letter.length != 1 || !letter.match?(/\A[a-zA-Z'-]*\z/)
       print %Q(
         Please enter a single letter (a-z).
         Incorrect guesses: #{display_incorrect_guesses}
