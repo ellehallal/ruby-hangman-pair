@@ -24,7 +24,6 @@ class Start
   def exit_message
     print %Q(
         Thanks for playing Hangman!
-        Created by Derek Baker and Elle Hallal
       )
   end
 
